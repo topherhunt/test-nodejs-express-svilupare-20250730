@@ -1,0 +1,11 @@
+<h1>Benvenuto nel mio blog!</h1>
+<% if (currentUser) { %>
+  <p>Ciao <%= currentUser.username %>! Cosa vuoi fare oggi?</p>
+  <ul>
+    <li><a href="/posts">Vedi i tuoi post</a></li>
+    <li><a href="/posts/new">Crea un nuovo post</a></li>
+    <li><a href="/users">Vedi tutti gli utenti</a></li>
+  </ul>
+<% } else { %>
+  <p>Per iniziare, <a href="/auth/signup">registrati</a> o <a href="/auth/login">accedi</a>.</p>
+<% } %>

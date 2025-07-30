@@ -1,0 +1,7 @@
+<h1>I miei post</h1>
+<a href="/posts/new">Crea nuovo post</a>
+<ul>
+  <% posts.forEach(p=>{ %>
+    <li><a href="/posts/<%= p.id %>"><%= p.title %></a></li>
+  <% }) %>
+</ul>

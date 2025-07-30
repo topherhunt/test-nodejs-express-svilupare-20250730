@@ -1,0 +1,16 @@
+<header>
+  <nav>
+    <a href="/">Home</a>
+    <% if (currentUser) { %>
+      <span>Ciao, <%= currentUser.username %>!</span>
+      <a href="/posts">I miei post</a>
+      <a href="/users">Utenti</a>
+      <form action="/auth/logout" method="post" style="display:inline;">
+        <button type="submit">Logout</button>
+      </form>
+    <% } else { %>
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Registrati</a>
+    <% } %>
+  </nav>
+</header>

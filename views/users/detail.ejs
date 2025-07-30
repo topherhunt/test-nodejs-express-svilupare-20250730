@@ -1,0 +1,7 @@
+<h1>Dettagli di <%= user.username %></h1>
+<h2>Post di <%= user.username %>:</h2>
+<ul>
+  <% posts.forEach(p => { %>
+    <li><a href="/posts/<%= p.id %>"><%= p.title %></a></li>
+  <% }) %>
+</ul>

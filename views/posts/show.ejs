@@ -1,0 +1,21 @@
+<h1><%= post.title %> di <%= post.username %></h1>
+<p><%= post.body %></p>
+<hr/>
+<h2>Commenti</h2>
+<ul>
+  <% comments.forEach(c=>{ %>
+    <li>
+      <strong><%= c.username %></strong> (<%= c.inserted_at %>):<br/>
+      <%= c.body %>
+    </li>
+  <% }) %>
+</ul>
+
+<% if (currentUser) { %>
+  <form action="/posts/<%= post.id %>/comments" method="post">
+    <textarea name="body" placeholder="Il tuo commento"></textarea><br/>
+    <button type="submit">Aggiungi commento</button>
+  </form>
+<% } else { %>
+  <p>Devi <a href="/auth/login">accedere</a> per commentare.</p>
+<% } %>
